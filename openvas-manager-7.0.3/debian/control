@@ -1,0 +1,50 @@
+Source: openvas-manager
+Section: admin
+Priority: optional
+Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+Uploaders: ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
+           SZ Lin (林上智) <szlin@debian.org>
+Build-Depends: debhelper (>= 11),
+               cmake (>= 2.8),
+               doxygen,
+               libopenvas-dev (>= 9.0.2),
+               libsqlite3-dev,
+               pkg-config,
+               xmltoman,
+               gnutls-bin (>= 3.2.15)
+Standards-Version: 4.1.5
+Homepage: http://www.openvas.org/
+Vcs-Git: https://salsa.debian.org/pkg-security-team/openvas-manager.git
+Vcs-Browser: https://salsa.debian.org/pkg-security-team/openvas-manager
+
+Package: openvas-manager-common
+Section: net
+Architecture: all
+Recommends: texlive-latex-extra
+Depends: ${misc:Depends}, gnutls-bin (>= 3.2.15)
+Multi-Arch: foreign
+Suggests: python, gnupg, wget, xsltproc
+Description: architecture independent files for openvas-manager
+ The OpenVAS-Manager is a layer between OpenVAS-Scanner and various client
+ applications such as OpenVAS-Client or Greenbone Security Assistant.  Among
+ other features, it adds server-side storage of scan results and it makes it
+ unnecessary for scan clients to keep connection until a scan finishes.
+ .
+ This package contains the common openvas-manager
+ files shared by all architectures.
+
+Package: openvas-manager
+Section: net
+Architecture: any
+Depends: lsb-base (>= 3.0-6),
+         doc-base,
+         openvas-manager-common (= ${source:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: openvas-administrator
+Replaces: openvas-administrator, libopenvas6
+Description: Manager Module of OpenVAS
+ The OpenVAS-Manager is a layer between OpenVAS-Scanner and various client
+ applications such as OpenVAS-Client or Greenbone Security Assistant.  Among
+ other features, it adds server-side storage of scan results and it makes it
+ unnecessary for scan clients to keep connection until a scan finishes.

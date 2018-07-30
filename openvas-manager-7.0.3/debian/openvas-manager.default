@@ -1,0 +1,16 @@
+# NOTE: This file is not used if you are using systemd. The options are
+# hardcoded in the openvas-manager.service file. If you want to change
+# them you should override the service file by creating a file
+# /etc/systemd/system/openvas-manager.service.d/local.conf like this:
+# [Service]
+# ExecStart=
+# ExecStart=/usr/sbin/openvasmd <your desired options>
+
+# The file the OpenVAS Manager will use as database.
+DATABASE_FILE=/var/lib/openvas/mgr/tasks.db
+
+# The address the OpenVAS Manager will listen on.
+MANAGER_ADDRESS=127.0.0.1
+
+# The port the OpenVAS Manager will listen on.
+MANAGER_PORT=9390

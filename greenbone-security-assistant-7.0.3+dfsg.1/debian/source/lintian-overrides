@@ -1,0 +1,4 @@
+# Both files are their own sources, they have some long lines of data in
+# the middle of normal code.
+source-is-missing src/html/classic/js/lib/i18next-2.3.4.js line length is *
+source-is-missing src/html/classic/js/lib/moment-timezone-with-data.js line length is *

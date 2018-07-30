@@ -1,0 +1,621 @@
+openvas-libraries (9.0.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * Update debian/watch and debian/control with new upstream github repository
+  * New upstram release
+  * Update date in debian/copyright
+  * Remove allow-radcli-in-addition-to-freeradius-client-to-provide-.patch
+  * Remove useless debian/libopenvas-doc.lintian-overrides
+  * Update debian/libopenvas9.symbols
+  * Add a fix-spelling-error.patch
+  * Add Breaks: openvas-scanner (<< 5.1.2~)
+
+ -- Sophie Brun <sophie@freexian.com>  Tue, 10 Jul 2018 11:38:57 +0200
+
+openvas-libraries (9.0.1-5) unstable; urgency=medium
+
+  [ Lukas Schwaighofer ]
+  * Only generate doxygen documentation when building Architecture: all
+    packages.
+
+  [ SZ Lin (林上智) ]
+  * Converting git-dpm to gbp pq
+  * Fix PATH_MAX undeclared issue on hurd-i386 platform
+  * Remove "pcap-config --libs" workaround (Closes: #877435)
+  * allow radcli in addition to freeradius-client to provide radius
+    authentication support (Closes: #868677)
+  * d/control: bump Standards-Version to 4.1.4
+  *            bump debhelper to 11
+  * d/compat: bump compat to 11
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Fri, 04 May 2018 23:25:21 +0800
+
+openvas-libraries (9.0.1-4) unstable; urgency=medium
+  [ SZ Lin (林上智) ]
+  * Fix FTBFS issue by trailing whitespace in PCAP_LDFLAGS (Closes: #876093)
+  * Bump Standards-Version to 4.1.0
+
+  [ ChangZhuo Chen (陳昌倬) ]
+  * Bump compat to 10.
+    * Migrate to use dh_missing.
+  * Install manual for openvas-nasl-lint.
+
+  [ Lukas Schwaighofer ]
+  * cleanup for compat 10
+    * no longer pass `--parallel` and `--with systemd` to dh, these options
+      have become the default
+    * no longer depend on dh-systemd (which is part of debhelper now)
+  * debian/control cleanup
+    * remove unnecessary version constraints from dependencies
+    * remove Replaces/Conflicts with versions no longer present in the archive
+    * radius support was dropped, no longer Build-Depend on libradcli-dev
+  * use https for the link to the copyright format
+  * move the openvas-nasl tool into a separate package
+  * mark libopenvas9 as Multi-Arch: same, drop obsolete Pre-Depends
+  * override the soname mismatch lintian warning
+  * do not select the "release" cmake type
+    * we do not want -O3 and some other options that are automatically added
+    * however, due to otherwise excessive debug logging, -DNDEBUG is preserved
+  * explicitly set DEB_HOST_MULTIARCH in debian/rules
+  * add a libopenvas-doc package containing the doxygen documentation
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Mon, 25 Sep 2017 16:19:26 +0800
+
+openvas-libraries (9.0.1-3) unstable; urgency=medium
+
+  * re-enable net-snmp support (Closes: #848080)
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Thu, 29 Jun 2017 17:53:18 +0800
+
+openvas-libraries (9.0.1-2) unstable; urgency=medium
+
+  * Move package from experimental to sid archive
+  * Bump standards version to 4.0.0
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Tue, 20 Jun 2017 11:11:21 +0800
+
+openvas-libraries (9.0.1-1~exp1) experimental; urgency=medium
+
+  * Import new upstream release
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Wed, 22 Mar 2017 19:48:10 +0800
+
+openvas-libraries (9.0.0-1~exp1) experimental; urgency=medium
+
+  * Import new upstream release
+
+ -- SZ Lin (林上智) <szlin@cs.nctu.edu.tw>  Mon, 14 Nov 2016 10:21:00 +0800
+
+openvas-libraries (8.0.8-1) unstable; urgency=medium
+
+  * Import new upstream release
+
+ -- SZ Lin (林上智) <szlin@cs.nctu.edu.tw>  Fri, 07 Oct 2016 23:27:57 +0800
+
+openvas-libraries (8.0.7-1) unstable; urgency=medium
+
+  * Import upstream version to Debian (Closes: #835393)
+
+ -- SZ Lin (林上智) <szlin@cs.nctu.edu.tw>  Thu, 08 Sep 2016 19:20:37 +0800
+
+openvas-libraries (8.0.7-0kali1) kali-experimental; urgency=medium
+
+  * Import new upstream release
+  * Add RADIUS support
+
+ -- Sophie Brun <sophie@freexian.com>  Wed, 22 Jun 2016 10:39:34 +0200
+
+openvas-libraries (8.0.4-0kali1) kali-dev; urgency=medium
+
+  * Import new upstream release
+  * Update .install to add openvas-nasl-lint
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 10 Sep 2015 15:33:32 +0200
+
+openvas-libraries (8.0.1-0kali2) kali-dev; urgency=medium
+
+  * Rebuild in kali-dev for libgcrypt20 and gnutls28 transition.
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 23 Apr 2015 09:31:45 +0200
+
+openvas-libraries (8.0.1-0kali1) kali; urgency=medium
+
+  * New upstream release
+  * debian/control: update build dependencies
+  * Replace libopenvas7 with libopenvas8
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 10 Apr 2015 14:59:30 +0200
+
+openvas-libraries (7.0.2-0kali2) kali-dev; urgency=medium
+
+  * Rebuild in kali-dev for libgcrypt20 and gnutls28 transition.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Fri, 21 Nov 2014 17:59:05 +0100
+
+openvas-libraries (7.0.2-0kali1) kali; urgency=medium
+
+  * Rename source package to openvas-libraries like in upstream and debian
+  * New upstream release
+  * Move libraries to their multiarch location
+  * Add a file debian/copyright
+
+ -- Sophie Brun <sophie@freexian.com>  Thu, 31 Jul 2014 09:18:48 +0200
+
+libopenvas (6.0.0-0kali2) kali; urgency=low
+
+  * Fix SYSCONFDIR, LOCALSTATEDIR and LIBDIR paths during configure in debian/rules.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Fri, 03 May 2013 16:21:30 +0200
+
+libopenvas (6.0.0-0kali1) kali; urgency=low
+
+  * New upstream release.
+  * Upgrade debhelper compat level to 9 to enable hardening without
+    hardening-wrapper.
+  * Update debian/rules to be dh-based.
+  * Switch to “3.0 (quilt)” source format.
+  * Rename libopenvas5-dev to libopenvas-dev (non-versioned).
+  * Replace libopenvas5 package by libopenvas6.
+  * Update the build dependencies to match cmake's checks.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Thu, 02 May 2013 10:06:30 +0200
+
+libopenvas (5.0.4-1kali0) kali; urgency=low
+
+  * Upstream update
+
+ -- Mati Aharoni <muts@kali.org>  Tue, 04 Dec 2012 12:04:50 -0500
+
+libopenvas (5.0+beta2-1) unstable; urgency=low
+
+  * New upstream release.
+    - A bug which caused outdated cache files to be used under rare circumstances
+      has been fixed.
+    - Code cleanup and refactoring has taken place in NVT meta data management.
+    - Libssh detection has been improved.
+    - The LDAP auth DN validation has been improved.
+    - Support for the observer role has been added and functionality for user
+      management has been moved from openvas-administrator to openvas-libraries.
+    - Support for name conversion for legacy .nes dependencies when loading the
+      cache has been removed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Mon, 31 Oct 2011 14:58:04 +0100
+
+libopenvas (5.0+beta1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Support for improved SSH functionality has been added.
+    - Support for comprehensive network scanning with nmap has been added.
+    - A number of compiler warnings have been addressed.
+    - Support for shared sockets has been removed.
+    - OpenVAS Libraries will now honor the unscanned_closed_udp preference when
+      deciding how an unscanned UDP port should be treated.
+    - Nmap support has been improved.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Sat, 20 Aug 2011 15:42:27 +0200
+
+libopenvas (4.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+    - OpenVAS Libraries will now honor the unscanned_closed_udp preference when
+      deciding how an unscanned UDP port should be treated.
+    - Compiler warnings from gcc 4.6 have been addressed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 01 Jun 2011 19:56:38 +0200
+
+libopenvas (4.0.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - The handling of internal dependencies while linking has been improved,
+      parallel builds of openvas-libraries should now work.
+    - Two potential resource leaks reported by Pavel Sejnoha and Henri Doreau have
+      been fixed.
+    - The setting "unscanned_closed" is now properly applied to UDP ports.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Sat, 07 May 2011 12:30:32 +0200
+
+libopenvas (4.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - A bug which caused only the first NVT dependency to be considered has been fixed.
+    - A bug which caused WMI connects to fail has been fixed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Thu, 03 Mar 2011 13:58:44 +0100
+
+libopenvas (4.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - The LSC RPM creator support script is now installed correctly.
+    - The build environment has been consolidated.
+    - A bug which could cause a segmentation fault when using IPv6 under certain
+      circumstances has been fixed.
+    - The check for administrative user privileges has been made more strict.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 23 Feb 2011 19:12:27 +0100
+
+libopenvas (4.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Setting file handling has been updated to match changes in openvas-scanner.
+    - Support for pkg-config has been (re-)introduced.
+    - File locations have been adjusted to conform to the Filesystem Hierarchy
+      Standard.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Thu, 03 Feb 2011 20:28:14 +0100
+
+libopenvas (3.99.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - The build environment has fixed in a number of places to restore expected
+      behaviour after the move to cmake.
+    - The documentation has been updated to match the changes in the build
+      environment.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 26 Jan 2011 17:34:28 +0100
+
+libopenvas (3.99.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - Improved and fixed remote LDAP authentication.
+    - Former binary ".nes" NVTs "find_service", "openvas_tcp_scanner"
+      and "synscan" are now built-in NASL methods.
+    - Any autotools-related build environment was removed.
+    - At top-level a cmake-based build environment was introduced.
+    - libopenvas_omp: Activated escaping of characters so that
+      special characters can more save be allowed for some OMP commands.
+    - example_auth.conf was updated with more sensible values.
+    - Bug fix on Credential creation.
+    - this package now initially creates required directories in the
+      installation directory (if not present). This was done by other
+      modules previously (mostly openvas-scanner)
+    - Many old code paths for certain operting system environments
+      have been removed. Most likely, HPUX, Solaris and similar
+      won't compile this code anymore.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Tue, 25 Jan 2011 18:12:11 +0100
+
+libopenvas (3.99.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - The user creation process has been made more robust.
+    - More compiler warnings have been addressed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Mon, 10 Jan 2011 15:21:24 +0100
+
+libopenvas (3.99.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - The documentation in the INSTALL_README file has been updated.
+    - A number of compiler warnings by gcc 4.4 has been addressed.
+    - A incorrect error message during user creation that only occurred in setuid
+      environments has been removed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Mon, 20 Dec 2010 13:04:36 +0100
+
+libopenvas (3.98.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Further code cleanup has lead to the removal of more than 3,500 lines of
+      unused code.
+    - A bug which tried to free memory that was not allocated before under some
+      circumstances has been fixed.
+    - Superfluous log messages regarding file uploads have been removed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 03 Dec 2010 17:10:07 +0100
+
+libopenvas (3.98.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - Network level scan support.
+    - The code for providing OMP functionality has been cleaned up.
+    - Further code cleanup has lead to the removal of more than 3,500 lines of
+      unused code.
+    - A bug which tried to free memory that was not allocated before under some
+      circumstances has been fixed.
+    - Superfluous log messages regarding file uploads have been removed.
+    - NVT meta data management has been improved, resulting in a smaller memory
+      footprint of the scanner.
+    - The install path for header files has been made more consistent.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 19 Nov 2010 17:37:14 +0100
+
+libopenvas (3.1.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - Significant memory leaks are closed.
+    - Bug fix for handling shared file descriptors that now
+      prevents unnecessary use of new file descriptiors under
+      certain circumstances.
+    - Little fix in the nasl wmi api.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 10 Sep 2010 09:50:25 +0200
+
+libopenvas (3.1.2-1) unstable; urgency=low
+
+  * New upstream release.
+    * A bug in the WMI interface stub which caused the build to fail when configured
+      without WMI has been fixed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 04 Aug 2010 08:53:11 +0200
+
+libopenvas (3.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+    * Cross compile support for mingw32 has been added to libopenvas/base.
+    * Missing copyright and license information has been added to a number of files.
+    * The COPYING file has been updated to better indicate the licenses of
+      individual files and the full text for all licenses has been added.
+    * The WMI infrastructure has been updated to match necessary changes in the API
+      of the WMI patch.
+    * The documentation on using WMI in libopenvas has been updated.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Tue, 03 Aug 2010 21:00:16 +0200
+
+libopenvas (3.1.0-2) unstable; urgency=low
+
+  * Add openvas-nasl to libopenvas3-dev
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Thu, 15 Jul 2010 18:07:04 +0200
+
+libopenvas (3.1.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Code cleanup: Code from openvas-administrator and openvas-manager which could
+      be more appropriately placed in libopenvas has been moved here.
+    - Initial support for LDAP authentication has been added.
+    - IPv6 support has been improved.
+    - Support for building parts of libopenvas on Windows has been added.
+    - Support for reading preference file uploads from memory instead of from disk
+      has been added.
+    - Support for NTLMSSP has been added.
+    - Authentication mechanism extended to support LDAP and ADS.
+    - An issue which caused SSH logins with RSA keys on remote systems to fail under
+      certain circumstances has been fixed.
+    - Support for logging to syslog has been added.
+    - Support for scanning virtual web hosts has been added.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 14 Jul 2010 18:45:41 +0200
+
+libopenvas (3.1.0.rc3) unstable; urgency=low
+
+  * New upstream release.
+    - An issue which caused the build to fail on Gentoo GNU/Linux systems has been
+      fixed.
+    - An issue which caused openvas-client, openvas-cli and openvas-manager to fail
+      to build with libopenvas has been fixed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 02 Jul 2010 22:31:40 +0200
+
+libopenvas (3.1.0.rc2) unstable; urgency=low
+
+  * New upstream release.
+    - QA: A number of compiler warnings have been addressed.
+    - Authentication mechanism extended to support LDAP and ADS.
+    - An issue which caused SSH logins with RSA keys on remote systems to fail under
+      certain circumstances has been fixed.
+    - A bug which caused segmentation faults when using NTLMSSP authentication in
+      libopenvas built with WMI supports has been fixed.
+    - Support for logging to syslog has been added.
+    - Support for scanning virtual web hosts has been added.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Mon, 28 Jun 2010 18:13:51 +0200
+
+libopenvas (3.1.0.rc1) unstable; urgency=low
+
+  * New upstream release.
+    - Code cleanup: Code from openvas-administrator and openvas-manager which could
+      be more appropriately placed in libopenvas has been moved here.
+    - Initial support for LDAP authentication has been added.
+    - A bug which caused WMI support to be disabled in the standalone NASL
+      interpreter has been fixed.
+    - IPv6 support has been improved.
+    - Support for building parts of libopenvas on Windows has been added.
+    - Support for reading preference file uploads from memory instead of from disk
+      has been added.
+    - Support for NTLMSSP has been added.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 19 May 2010 18:48:25 +0200
+
+libopenvas (3.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+    - The build infrastructure for the hg and misc modules has been switch to CMake
+      from autoconf.
+    - Support for resuming tasks has been added to OMP.
+    - Packet forgery support for IPv6 has been improved.
+    - A build issue on Mandriva has been fixed.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Tue, 13 Apr 2010 13:01:33 +0200
+
+libopenvas (3.0.4-1) unstable; urgency=low
+
+  * New upstream release.
+    - Several build issues on Mandriva have been fixed.
+    - Support for using libopenvas in C++ code has been introduced for some
+      OMP libraries.
+    - The openvas-nasl standalone NASL interpreter is now linked dynamically.
+    - A bug which caused some GnuTLS error messages to be printed to stderr instead
+      of to the logs had been fix.
+    - Support for registry hives has been added to the WMI registry functions.
+    - Support for detecting libraries in non-standard locations during the
+      configuration process has been added.
+    - Support for multiple levels of subdirectories in the NVT directory has been
+      improved.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 03 Mar 2010 21:00:41 +0100
+
+libopenvas (3.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+    - Initial support for dropping privileges.
+    - New crypto functions and support for SMB NTLMv1 and NTLMv2.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Thu, 04 Feb 2010 22:15:24 +0100
+
+libopenvas (3.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Support for modifying scanner configuration files has been added.
+    - The API for retrieving settings has been improved.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Wed, 20 Jan 2010 08:47:08 +0100
+
+libopenvas (3.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+    - The OMP API has been updated.
+    - An unnecessary GnuTLS call has been removed.
+    - Minor code cleanups.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Tue, 12 Jan 2010 18:41:33 +0100
+
+libopenvas (3.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - IPv6 support
+    - WMI-Client support (optional)
+    - Integration of openvas-libnasl
+    - New library "base"
+    - New library "omp"
+    - Former libopenvas renamed to libopenvas_misc
+    - New NVT cache implementation to overcome limitations
+    - Several files from openvas-client integrated
+    - Use of "cmake" to build base, omp and nasl
+    - glib dependency raised from 2.6 to 2.12
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 25 Dec 2009 22:23:12 +0100
+
+libopenvas (2.0.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 17 Aug 2009 18:47:35 +0200
+
+libopenvas (2.0.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Stephan Kleine <bitshuffler@opensuse.org>  Fri, 12 Jun 2009 13:47:35 +0200
+
+libopenvas (2.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Michael Wiegand <michael.wiegand@intevation.de>  Fri, 17 Apr 2009 08:41:24 +0200
+
+libopenvas (2.0.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated the control file to take account of translation work as part
+    of the Smith review project
+  * Fixed broken linking (linker-libs.dpatch)
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Sun, 22 Feb 2009 02:17:44 +0000
+
+libopenvas (2.0.0-2) unstable; urgency=low
+
+  * Brown paper bug upload: Restore the changes introduced since 1.0.1-5
+  * Make proper versioned binary packages for this library
+  * Add a Build-Depend on libglib2.0-dev (Closes: 511627)
+  * Conflict against libopenvas1-dev
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@debian.org>  Thu, 15 Jan 2009 22:19:53 +0100
+
+libopenvas (2.0.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@debian.org>  Fri, 02 Jan 2009 01:21:09 +0100
+
+libopenvas (2.0.0.beta2-1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Sat, 15 Nov 2008 12:52:28 +0000
+
+libopenvas (2.0.0.beta1-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Cleaned up the rules
+  * Updated copyright
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Sun, 12 Oct 2008 19:23:20 +0100
+
+libopenvas (1.0.2-2) UNRELEASED; urgency=low
+
+  * Not released yet
+
+ -- Jan Wagner <waja@cyconet.org>  Tue, 08 Jul 2008 10:10:47 +0200
+
+libopenvas (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Add Tim and myself to Uploaders
+  * Set Debian Maintainers Mailing List as Maintainer
+  * Add Vcs-Headers
+  * Bump Standards Version to 3.8.0, no changes needed
+  * Remove trailing whitespaces from EOL and EOF in debian/*
+  * Move Section to right place for libopenvas in control
+  * Also depend on libgnutls-dev, libpcap-dev for -dev
+  * Remove debian/*.dirs since unneeded
+
+ -- Jan Wagner <waja@cyconet.org>  Mon, 07 Jul 2008 16:17:53 +0200
+
+libopenvas (1.0.1-5) unstable; urgency=low
+
+  * Fix the Makefile so that the library is linked with the appropriate
+    libraries. Also change libopenvas.tmpl
+  * Drop the libgpgme11-dev Build-Dep, we actually don't need it, none of the
+    sources build use the gpgme.h header.
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@debian.org>  Fri, 02 May 2008 21:20:05 +0200
+
+libopenvas (1.0.1-4) unstable; urgency=low
+
+  * Minor updates to control and copyright file to fix issues highlighted
+    by jfs in regard to the priority and copyright of the packaging
+    respectively
+  * Minor update to control to fix differing dependency between
+    libopenvas and openvas-libnasl as highlighted by jfs
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Wed, 30 Apr 2008 23:23:27 +0100
+
+libopenvas (1.0.1-3) unstable; urgency=low
+
+  * Minor update to control file, fixed dependency on ${source:Version} substvar
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Wed, 16 Apr 2008 05:57:27 +0100
+
+libopenvas (1.0.1-2) unstable; urgency=low
+
+  * Minor updates to control file, now lists jfs as uploader, fixed deprecated
+    ${Source-Version} substvar, Build-Depends directive
+  * Minor update to rules file, DH_COMPAT environment variable no longer required
+  * Minor update to libopenvas2-dev.install
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Wed, 16 Apr 2008 05:21:09 +0100
+
+libopenvas (1.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Thu, 03 Apr 2008 01:18:00 +0100
+
+libopenvas (1.0.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Tue, 05 Feb 2008 22:12:21 +0000
+
+libopenvas (0.9.1-2) unstable; urgency=low
+
+  * Minor updates to the control and copyright files
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Wed, 31 Oct 2007 02:29:25 +0000
+
+libopenvas (0.9.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Tim Brown <timb@nth-dimension.org.uk>  Wed, 19 Sep 2007 01:41:35 +0100
+

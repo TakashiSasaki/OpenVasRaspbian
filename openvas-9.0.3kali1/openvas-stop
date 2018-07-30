@@ -1,0 +1,22 @@
+#!/bin/bash
+
+## Colour for bash prompt
+RED="\033[01;31m"
+GREEN="\033[01;32m"
+RESET="\033[00m"
+
+## Check if running as root
+if [[ $EUID -ne 0 ]]; then
+   echo -e "${RED}[-]${RESET} Error: $0 must be ${RED}run as root${RESET}" 1>&2
+   exit 1
+fi
+
+## Banner
+echo -e "${GREEN}[>]${RESET} Stopping OpenVAS services"
+
+## Stop services
+systemctl stop greenbone-security-assistant openvas-scanner openvas-manager
+
+## Check services status
+systemctl --no-pager -l status greenbone-security-assistant openvas-scanner openvas-manager
+

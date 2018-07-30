@@ -1,0 +1,513 @@
+# Greenbone Security Assistant
+# $Id$
+# Description: German user interface translations.
+#
+# Copyright:
+# Copyright (C) 2016-2017 Greenbone Networks GmbH
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-08 13:41+0100\n"
+"PO-Revision-Date: 2017-11-08 12:30+0200\n"
+"Last-Translator: Timo <timo.pollmeier@greenbone.net>\n"
+"Language-Team: German <openvas-devel@wald.intevation.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.3\n"
+"X-POOTLE-MTIME: 1510140607.106193\n"
+
+#: src/html/classic/js/greenbone.js:623 src/html/classic/js/greenbone.js:1345
+msgid "Save"
+msgstr "Speichern"
+
+#: src/html/classic/js/greenbone.js:1197 src/html/classic/js/greenbone.js:1198
+msgid "Unfold {{name}}"
+msgstr "{{name}} ausklappen"
+
+#: src/html/classic/js/greenbone.js:1203 src/html/classic/js/greenbone.js:1204
+msgid "Fold {{name}}"
+msgstr "{{name}} einklappen"
+
+#: src/html/classic/js/greenbone.js:1354 src/html/classic/js/greenbone.js:1362
+msgid "Create"
+msgstr "Erstellen"
+
+#: src/html/classic/js/greenbone.js:1370
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/html/classic/js/greenbone.js:1461
+msgid "Please wait..."
+msgstr "Bitte warten..."
+
+#: src/html/classic/js/greenbone.js:1557
+msgid "Update Filter"
+msgstr "Filter aktualisieren"
+
+#: src/html/classic/js/greenbone.js:1574
+msgid "Select date"
+msgstr "Datum auswählen"
+
+#: src/html/classic/js/greenbone.js:1892
+msgid "Follow link?"
+msgstr "Link folgen?"
+
+#: src/html/classic/js/greenbone.js:1895
+msgid ""
+"This dialog will open a new window for <a>{{url}}</a> if you click on follow "
+"link. Following this link is on your own responsibility. Greenbone doesn't "
+"endorse the content you will see there."
+msgstr ""
+"Dieser Dialog wird ein neues Fenster für <a>{{url}}</a> öffnen, wenn sie auf "
+"den Folgen-Link klicken. Diesem Link zu folgen geschieht auf Ihre eigene "
+"Verantwortung. Greenbone befürwortet nicht die Inhalte, die Sie dort sehen."
+
+#: src/html/classic/js/greenbone.js:1900
+msgid "Abort"
+msgstr "Abbrechen"
+
+#: src/html/classic/js/greenbone.js:1901
+msgid "Follow link"
+msgstr "Link folgen"
+
+#: src/html/classic/js/greenbone.js:1974
+msgid "{{subject}} {{subject_id}} {{description}} to {{resource}} {{id}}"
+msgstr "{{subject}} {{subject_id}} {{description}} nach {{resource}} {{id}}"
+
+#: src/html/classic/js/greenbone.js:1982
+msgid "{{subject}} {{subject_id}} {{description}}  {{id}}"
+msgstr "{{subject}} {{subject_id}} {{description}}  {{resource}} {{id}}"
+
+#: src/html/classic/js/greenbone.js:1987
+msgid "{{subject}} {{subject_id}} {{description}}"
+msgstr "{{subject}} {{subject_id}} {{description}}"
+
+#: src/html/classic/js/gsa_bar_chart.js:68
+msgid "Loading bar chart ..."
+msgstr "Lade Balkendiagramm ..."
+
+#: src/html/classic/js/gsa_bar_chart.js:68
+msgid "Bar Chart"
+msgstr "Balkendiagramm"
+
+#: src/html/classic/js/gsa_bubble_chart.js:57
+msgid "Loading bubble chart ..."
+msgstr "Lade Blasendiagramm ..."
+
+#: src/html/classic/js/gsa_bubble_chart.js:57
+#: src/html/classic/js/gsa_line_chart.js:79
+msgid "Bubble Chart"
+msgstr "Blasendiagramm"
+
+#: src/html/classic/js/gsa_bubble_chart.js:102
+msgid "No matching {{- resource_type}}"
+msgstr "Kein(e) passende(r/s) {{- resource_type}}"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1423
+#: src/html/classic/js/gsa_chart_helpers.js:1545
+msgid "High"
+msgstr "Hoch"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1426
+msgid "Medium"
+msgstr "Mittel"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1429
+msgid "Low"
+msgstr "Niedrig"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1432
+msgid "Log"
+msgstr "Log"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1435
+msgid "False Positive"
+msgstr "Falsch-Positiv"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1438
+msgid "Debug"
+msgstr "Debug"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1441
+msgid "Error"
+msgstr "Fehler"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1444
+msgid "N/A"
+msgstr "N/A"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1458
+msgid "Operating System"
+msgstr "Betriebssystem"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1460
+msgid "OVAL definition"
+msgstr "OVAL-Definition"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1462
+msgid "CERT-Bund Advisory"
+msgstr "CERT-Bund-Meldung"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1464
+msgid "DFN-CERT Advisory"
+msgstr "DFN-CERT-Meldung"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1466
+msgid "SecInfo Item"
+msgstr "SecInfo-Eintrag"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1482
+msgid "DFN-CERT Advisories"
+msgstr "DFN-CERT-Meldungen"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1484
+msgid "CERT-Bund Advisories"
+msgstr "CERT-Bund-Meldungen"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1528
+msgid "total {{- resource_type_plural}}"
+msgstr "{{- resource_type_plural}} gesamt"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1535
+msgid "creation time"
+msgstr "Erstellungszeit"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1537
+msgid "duration"
+msgstr "Laufzeit"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1539
+msgid "modification time"
+msgstr "Änderungszeit"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1541
+msgid "QoD"
+msgstr "QoD"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1543
+msgid "QoD type"
+msgstr "QoD-Typ"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1547
+msgid "High / host"
+msgstr "Hoch / Host"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1549
+msgid "Duration / host"
+msgstr "Laufzeit / Host"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1600
+msgid "min. {{- field_name}}"
+msgstr "min. {{- field_name}}"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1604
+msgid "max. {{- field_name}}"
+msgstr "max. {{- field_name}}"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1608
+msgid "average {{- field_name}}"
+msgstr "durchschn. {{- field_name}}"
+
+#: src/html/classic/js/gsa_chart_helpers.js:1612
+msgid "summed {{- field_name}}"
+msgstr "Summe {{- field_name}}"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2027
+msgid "None"
+msgstr "Keiner"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2030
+msgid "Exploit"
+msgstr "Exploit"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2033
+msgid "Remote vulnerability"
+msgstr "Remote-Schwachstelle"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2036
+msgid "Package check"
+msgstr "Package-Check"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2039
+msgid "Registry check"
+msgstr "Registry-Check"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2042
+msgid "Executable version"
+msgstr "Programmdatei-Version"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2045
+msgid "Remote analysis"
+msgstr "Remote-Analyse"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2048
+msgid "Remote probe"
+msgstr "Fern-Test"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2051
+msgid "Unreliable rem. banner"
+msgstr "Unzuverlässiger Banner"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2054
+msgid "Unreliable exec. version"
+msgstr "Unzuverlässige Prog.-Version"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2546
+msgid "{{title}} (Loading...)"
+msgstr "{{title}} (Lädt...)"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2553
+msgid "{{title}} {{filter_text}} (Total: {{count}})"
+msgstr "{{title}} {{filter_text}} (Gesamt: {{count}})"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2650
+msgid "Greenbone Security Assistant - Chart data table"
+msgstr "Greenbone Security Assistant - Datentabelle"
+
+#: src/html/classic/js/gsa_chart_helpers.js:2702
+msgid "Applied filter: {{filter}}"
+msgstr "Angewandter Filter: {{filter}}"
+
+#: src/html/classic/js/gsa_cloud_chart.js:54
+msgid "Loading word cloud ..."
+msgstr "Lade Wortwolke ..."
+
+#: src/html/classic/js/gsa_cloud_chart.js:55
+msgid "Word Cloud"
+msgstr "Wortwolke"
+
+#: src/html/classic/js/gsa_dashboard.js:231
+#: src/html/classic/js/gsa_dashboard.js:232
+msgid "Edit Dashboard"
+msgstr "Dashboard bearbeiten"
+
+#: src/html/classic/js/gsa_dashboard.js:245
+#: src/html/classic/js/gsa_dashboard.js:246
+msgid "Add new Chart"
+msgstr "Neues Diagramm hinzufügen"
+
+#: src/html/classic/js/gsa_dashboard.js:261
+#: src/html/classic/js/gsa_dashboard.js:262
+msgid "Reset to defaults"
+msgstr "Auf Voreinstellungen zurücksetzen"
+
+#: src/html/classic/js/gsa_dashboard.js:277
+#: src/html/classic/js/gsa_dashboard.js:278
+msgid "Cancel Editing"
+msgstr "Bearbeitung abbrechen"
+
+#: src/html/classic/js/gsa_dashboard.js:293
+#: src/html/classic/js/gsa_dashboard.js:294
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: src/html/classic/js/gsa_dashboard.js:1585
+#: src/html/classic/js/gsa_dashboard.js:1586
+msgid "Remove"
+msgstr "Entfernen"
+
+#: src/html/classic/js/gsa_dashboard.js:1593
+msgid "Initializing display for \"{{display}}\"..."
+msgstr "Initialisiere Anzeige für \"{{display}}\""
+
+#: src/html/classic/js/gsa_dashboard.js:1612
+msgid "Loading data ..."
+msgstr "Daten werden geladen ..."
+
+#: src/html/classic/js/gsa_dashboard.js:2388
+msgid "Could not load chart {{chart}}"
+msgstr "Konnte Diagramm \"{{chart}}\" nicht laden"
+
+#: src/html/classic/js/gsa_dashboard.js:2860
+msgid "Loading aborted"
+msgstr "Laden wurde abgebrochen"
+
+#: src/html/classic/js/gsa_dashboard.js:2872
+msgid "HTTP error {{error}}"
+msgstr "HTTP Fehler {{error}}"
+
+#: src/html/classic/js/gsa_dashboard.js:2873
+msgid "Error: HTTP request returned status {{status}} for URL: {{url}}"
+msgstr ""
+"Fehler: Die HTTP Anfrage hat den Status {{status}} für die URL {{url}} "
+"zurückgegeben"
+
+#: src/html/classic/js/gsa_dashboard.js:2879
+msgid "Error reading XML"
+msgstr "Fehler beim Lesen der XML Daten"
+
+#: src/html/classic/js/gsa_dashboard.js:2880
+msgid "Error reading XML from URL {{url}}: {{error}}"
+msgstr "Fehler beim Lesen der XML Daten von der URL {{url}}: {{error}}"
+
+#: src/html/classic/js/gsa_dashboard.js:2888
+msgid "Error parsing XML data"
+msgstr "Fehler beim Parsen der XML Daten"
+
+#: src/html/classic/js/gsa_dashboard.js:2889
+msgid "Error parsing XML data. Details: {{details}}"
+msgstr "Fehler beim Parsen der XML Daten. Details: {{details}}"
+
+#: src/html/classic/js/gsa_dashboard.js:2918
+msgid "Internal error: Invalid request"
+msgstr "Interner Fehler: Ungültige Anfrage"
+
+#: src/html/classic/js/gsa_dashboard.js:2919
+msgid "Invalid request command: \"{{command}}"
+msgstr "Ungültiger Befehl für Anfrage: \"{{command}}\""
+
+#: src/html/classic/js/gsa_dashboard.js:2926
+msgid "Error {{omp_status}}: {{omp_status_text}}"
+msgstr "Fehler {{omp_status}}: {{omp_status_text}}"
+
+#: src/html/classic/js/gsa_dashboard.js:2928
+msgid "OMP Error {{omp_status}}: {{omp_status_text}}"
+msgstr "OMP Fehler {{omp_status}}: {{omp_status_text}}"
+
+#: src/html/classic/js/gsa_dashboard.js:3217
+msgid "{{title_text}} (Loading...)"
+msgstr "{{title_text}} (Lädt...)"
+
+#: src/html/classic/js/gsa_dashboard.js:3222
+msgid "Unknown chart"
+msgstr "Unbekanntes Diagramm"
+
+#: src/html/classic/js/gsa_donut_chart.js:64
+msgid "Loading donut chart ..."
+msgstr "Lade Ringdiagramm ..."
+
+#: src/html/classic/js/gsa_donut_chart.js:64
+msgid "Donut Chart"
+msgstr "Ringdiagramm"
+
+#: src/html/classic/js/gsa_donut_chart.js:686
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#: src/html/classic/js/gsa_donut_chart.js:689
+msgid "Active (unlimited)"
+msgstr "Aktiv (unbegrenzt)"
+
+#: src/html/classic/js/gsa_donut_chart.js:692
+msgid "Active for next {{days}} days"
+msgstr "Aktiv für die nächsten {{days}} Tage"
+
+#: src/html/classic/js/gsa_gantt_chart.js:79
+msgid "Loading Gantt chart ..."
+msgstr "Lade Gantt-Diagramm ..."
+
+#: src/html/classic/js/gsa_gantt_chart.js:79
+msgid "Gantt Chart"
+msgstr "Gantt-Diagramm"
+
+#: src/html/classic/js/gsa_gantt_chart.js:125
+#: src/html/classic/js/gsa_h_bar_chart.js:152
+msgid "No matching {{resource_type}}"
+msgstr "Kein(e) passende(r/s) {{resource_type}}"
+
+#: src/html/classic/js/gsa_graphics_base.js:203
+msgid "Show detached chart window"
+msgstr "In neuem Fenster öffnen"
+
+#: src/html/classic/js/gsa_graphics_base.js:220
+msgid "Download CSV"
+msgstr "CSV Daten herunterladen"
+
+#: src/html/classic/js/gsa_graphics_base.js:244
+msgid "Show HTML table"
+msgstr "HTML Tabelle anzeigen"
+
+#: src/html/classic/js/gsa_graphics_base.js:268
+msgid "Show copyable SVG"
+msgstr "Kopierbare SVG Grafik anzeigen"
+
+#: src/html/classic/js/gsa_graphics_base.js:276
+msgid "Download SVG"
+msgstr "SVG Grafik herunterladen"
+
+#: src/html/classic/js/gsa_h_bar_chart.js:109
+msgid "Loading horizontal bar chart ..."
+msgstr "Lade horizontales Balkendiagramm ..."
+
+#: src/html/classic/js/gsa_h_bar_chart.js:110
+msgid "Horizontal Bar Chart"
+msgstr "Horizontales Balkendiagramm"
+
+#: src/html/classic/js/gsa_h_bar_chart.js:275
+msgid "<br/>({{assets}} Host(s) with average severity {{severity}})"
+msgstr ""
+"<br/>({{assets}} Host(s) mit durchschnittlichem Schweregrad {{severity}})"
+
+#: src/html/classic/js/gsa_line_chart.js:79
+msgid "Loading line chart ..."
+msgstr "Lade Liniendiagramm ..."
+
+#: src/html/classic/js/gsa_topology_chart.js:47
+msgid "Loading topology chart ..."
+msgstr "Lade Topologiediagramm"
+
+#: src/html/classic/js/gsa_topology_chart.js:47
+msgid "Topology Chart"
+msgstr "Topologiediagramm"
+
+#: src/html/classic/js/gsa_topology_chart.js:90
+msgid "Too many nodes to display"
+msgstr "Zu viele Knoten zum Anzeigen"
+
+#: src/html/classic/js/gsa_topology_chart.js:96
+msgid "Please try a filter selecting less hosts"
+msgstr "Bitte versuchen Sie einen Filter, der weniger Hosts auswählt"
+
+#: src/html/classic/js/gsa_topology_chart.js:143
+msgid "No hosts with topology selected"
+msgstr "Keine Hosts mit Topologie ausgewählt"
+
+#~ msgid "total {{resource_type_plural}}"
+#~ msgstr "{{resource_type_plural}} gesamt"
+
+#~ msgid "min. {{field_name}}"
+#~ msgstr "min. {{field_name}}"
+
+#~ msgid "max. {{field_name}}"
+#~ msgstr "max. {{field_name}}"
+
+#~ msgid "average {{field_name}}"
+#~ msgstr "durchschn. {{field_name}}"
+
+#~ msgid "summed {{field_name}}"
+#~ msgstr "Summe {{field_name}}"
+
+#~ msgid "Add new Component"
+#~ msgstr "Neue Komponente hinzufügen"
+
+#~ msgid "Stop Editing"
+#~ msgstr "Editieren beenden"
+
+#~ msgid "Initializing component \"{{component}}\"..."
+#~ msgstr "Komponente \"{{component}}\" wird initialisiert..."
+
+#~ msgid "Unnamed chart"
+#~ msgstr "Unbenannte Grafik"
+
+#~ msgid "Invalid request command: \"{{command}}\""
+#~ msgstr "Ungültiger Befehl für diese Anfrage: \"{{command}}\""

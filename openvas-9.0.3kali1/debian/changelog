@@ -1,0 +1,230 @@
+openvas (9.0.3kali1) kali-dev; urgency=medium
+
+  * Sync with Debian
+
+ -- Sophie Brun <sophie@freexian.com>  Wed, 18 Jul 2018 11:07:50 +0200
+
+openvas (9.0.3) unstable; urgency=medium
+
+  * Team upload.
+  * Update team maintainer address to Debian Security Tools
+    <team+pkg-security@tracker.debian.org>
+  * Update Vcs-Git and Vcs-Browser for the move to salsa.debian.org
+  * Update openvas-check-setup to use version 9 by default
+  * Drop redis configuration change from openvas-setup
+  * Switch to debhelper compat level 11
+  * Bump Standards-Version to 4.1.5
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 10 Jul 2018 16:26:32 +0200
+
+openvas (9.0.2kali5) kali-dev; urgency=medium
+
+  * Simplify openvas-setup script:
+    - openvas-scanner ships a working redis conf file, no need to check it or
+    update it.
+    - openvas-manager takes care of the certificate infrastructure checks.
+  * Add a postinst to update /etc/openvas/openvassd.conf with new kb_location
+  * Use deblhelper 11
+
+ -- Sophie Brun <sophie@freexian.com>  Wed, 16 May 2018 09:18:23 +0200
+
+openvas (9.0.2kali4) kali-dev; urgency=medium
+
+  * Add root check for setup and stop scripts
+
+ -- Ben Wilson <g0tmi1k@offensive-security.com>  Tue, 06 Mar 2018 14:52:23 +0000
+
+openvas (9.0.2kali3) kali-dev; urgency=medium
+
+  * Altered output formatting
+
+ -- Ben Wilson <g0tmi1k@offensive-security.com>  Fri, 02 Mar 2018 20:05:31 +0000
+
+openvas (9.0.2kali2) kali-dev; urgency=medium
+
+  * More verbose output & Open GSA on start
+
+ -- Ben Wilson <g0tmi1k@offensive-security.com>  Fri, 02 Mar 2018 18:37:45 +0000
+
+openvas (9.0.2kali1) kali-dev; urgency=medium
+
+  * Synchronize with Debian
+
+ -- Sophie Brun <sophie@freexian.com>  Mon, 13 Nov 2017 14:43:25 +0100
+
+openvas (9.0.2) unstable; urgency=medium
+
+  * Fix binary name in openvas-feed-update (Closes: #881485)
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Mon, 13 Nov 2017 13:03:31 +0800
+
+openvas (9.0.1) unstable; urgency=medium
+
+  [ Sophie Brun ]
+  * Fix openvas-setup (unix socket for redis is /var/run/redis/redis.sock)
+  * openvas-setup: replace openvas-mkcert* with openvas-manage-certs
+
+  [ SZ Lin (林上智) ]
+  * Remove openvas.postinst (Closes: #866017)
+  * Bump standards version to 4.1.1
+  * d/control: Replace the priority from extra to optional
+  * d/copyright: Replace "http" with "https"
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Wed, 01 Nov 2017 13:20:10 +0800
+
+openvas (9.0.0) unstable; urgency=medium
+
+  * Move package from experimental to sid archive
+  * Bump standards version to 4.0.0
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Tue, 20 Jun 2017 11:31:42 +0800
+
+openvas (9.0.0~exp1) experimental; urgency=low
+
+  * Package new version to Debian (Closes: #848973)
+
+ -- SZ Lin (林上智) <szlin@debian.org>  Tue, 21 Feb 2017 13:02:55 +0800
+
+openvas (9~kali3) kali-dev; urgency=medium
+
+  * Fix openvas-setup (unix socket for redis is /var/run/redis/redis.sock)
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 30 Jun 2017 10:58:07 +0200
+
+openvas (9~kali2) kali-experimental; urgency=medium
+
+  * openvas-setup: replace openvas-mkcert* with openvas-manage-certs
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 24 Mar 2017 10:15:38 +0100
+
+openvas (9~kali1) kali-experimental; urgency=medium
+
+  [ SZ Lin (林上智) ]
+  * Import upstream version to Debian (Closes: #848973)
+ 
+  [ Sophie Brun ]
+  * Update openvas-feed-update with new names (openvas-nvt-sync became
+    greenbone-nvt-sync ...)
+  * Update openvas-check-setup to have openvas 9 by default and fix few
+    details for Kali
+  * Change the unix socket for redis: from /var/lib/redis/redis.sock to
+    /var/run/redis/redis.sock
+
+ -- Sophie Brun <sophie@freexian.com>  Tue, 21 Mar 2017 15:42:18 +0100
+
+openvas (8.0+kali3) kali-dev; urgency=medium
+
+  * Update openvas-check-setup
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 11 Sep 2015 11:05:00 +0200
+
+openvas (8.0+kali2) kali-dev; urgency=medium
+
+  * Improve openvas-setup to fix the /etc/redis/redis.conf when user install
+    the redis.conf from package redis-server instead of keeping the one
+    modified by openvas.postinst
+
+ -- Sophie Brun <sophie@freexian.com>  Sun, 16 Aug 2015 10:50:59 +0200
+
+openvas (8.0+kali1) kali-dev; urgency=medium
+
+  * Improve openvas-setup to show progress during openvasmd --rebuild
+    and also to wait until openvassd died.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Tue, 28 Jul 2015 11:57:53 +0200
+
+openvas (8.0) kali; urgency=medium
+
+  * Fix debian/control with minimal versions
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 17 Apr 2015 09:37:34 +0200
+
+openvas (1.8) kali; urgency=medium
+
+  * Update openvas-check-setup for openvas current version 8 with file from
+    upstream and keep last changes for certificates checks
+  * Update debian/copyright
+  * Replace openvasmd --list-users by openvasmd --get-users as commande line
+    has been renamed
+  * Add a postinst: configure redis as needed and create a openvassd.conf to
+    use the socket /var/lib/redis.sock instead of /tmp/redis.sock
+
+ -- Sophie Brun <sophie@freexian.com>  Fri, 10 Apr 2015 10:19:56 +0200
+
+openvas (1.7.2) kali; urgency=medium
+
+  * Add a certificates check in openvas-setup and openvas-check-setup to
+    detect invalid certificate
+  * Update openvas-setup: use "service" instead of the /etc/init.d/ scripts.
+
+ -- Sophie Brun <sophie@freexian.com>  Tue, 10 Mar 2015 11:43:43 +0100
+
+openvas (1.7.1) kali; urgency=low
+
+  * Fix typo in admin username
+
+ -- Mati Aharoni <muts@kali.org>  Fri, 10 Oct 2014 04:41:06 -0400
+
+openvas (1.7) kali; urgency=medium
+
+  * Add openvas-certdata-sync call to openvas-setup.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Mon, 04 Aug 2014 14:01:22 +0200
+
+openvas (1.6) kali; urgency=medium
+
+  * Add openvas-scapdata-sync call to openvas-setup.
+  * Add rsync to Depends since it's needed by the above call.
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Mon, 04 Aug 2014 12:17:20 +0200
+
+openvas (1.5) kali; urgency=medium
+
+  * Try to adapt openvas-setup for openvas 7:
+    - use openvasmd --list-users to verify if there's an admin user
+    - use openvasmd --create-user to create the admin user
+    - drop the "om" parameter to openvas-mkcert-client so that the
+      certificates are created in their newly expected location
+      (/var/lib/openvas/CA/clientcert.pem +
+      /var/lib/openvas/private/CA/clientkey.pem) and adjust the
+      check accordingly
+
+ -- Raphaël Hertzog <hertzog@debian.org>  Mon, 04 Aug 2014 11:56:26 +0200
+
+openvas (1.4) kali; urgency=medium
+
+  * Update openvas-check-setup for openvas current version 7
+  * Drop mention to openvas-administrator in files setup, start and stop
+  * Update for compatibility with debhelper 9
+  * control: Drop depends to openvas-administrator and update Vcs-git
+  * Add copyright of file openvas-check-setup
+  * Drop file docs as it's empty
+  * Drop depends gsd (not supported anymore) and shlibs (architecture: all)
+  * Update description
+  * Add gsd in conflicts as it's not suppported anymore
+
+ -- Sophie Brun <sophie@freexian.com>  Mon, 04 Aug 2014 08:35:46 +0200
+
+openvas (1.3) kali; urgency=low
+
+  * Added openvas-check-setup
+
+ -- Mati Aharoni <muts@kali.org>  Fri, 09 Aug 2013 08:07:51 -0400
+
+openvas (1.2) kali; urgency=low
+
+  * Added check-openvas script
+
+ -- Mati Aharoni <muts@kali.org>  Fri, 09 Aug 2013 07:43:28 -0400
+
+openvas (1.1) kali; urgency=low
+
+  * Added openvas setup
+
+ -- Mati Aharoni <muts@kali.org>  Fri, 14 Dec 2012 11:18:40 -0500
+
+openvas (1.0) kali; urgency=low
+
+  * Initial Release.
+
+ -- Mati Aharoni <muts@kali.org>  Fri, 14 Dec 2012 10:49:47 -0500

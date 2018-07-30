@@ -1,0 +1,4 @@
+# this package provides several shared libraries built from the same source
+# tree; since they change their SONAMES together they are provided in a single
+# library package
+package-name-doesnt-match-sonames

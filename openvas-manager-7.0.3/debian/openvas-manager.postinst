@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+    if ! openvas-manage-certs -V >/dev/null 2>&1; then
+	echo "Creating openvas-scanner's certificate files"
+	openvas-manage-certs -a -q -f
+    fi
+fi
+
+#DEBHELPER#

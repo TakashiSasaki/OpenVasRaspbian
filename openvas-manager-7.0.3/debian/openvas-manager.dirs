@@ -1,0 +1,7 @@
+var/lib/openvas/mgr
+var/lib/openvas/openvasmd/report_formats
+var/lib/openvas/users
+var/lib/openvas/plugins
+var/lib/openvas/scap-data
+var/lib/openvas/cert-data
+var/log/openvas

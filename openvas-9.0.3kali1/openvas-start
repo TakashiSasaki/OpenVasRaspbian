@@ -1,0 +1,52 @@
+#!/bin/bash
+
+## Colour for bash prompt
+RED="\033[01;31m"
+GREEN="\033[01;32m"
+YELLOW="\033[01;33m"
+RESET="\033[00m"
+
+## Check if running as root
+if [[ $EUID -ne 0 ]]; then
+   echo -e "${RED}[-]${RESET} Error: $0 must be ${RED}run as root${RESET}" 1>&2
+   exit 1
+fi
+
+## Discover port used in config
+PORT=$(awk -F'=' '/^GSA_PORT=/ {print $2}' /etc/default/greenbone-security-assistant)
+URL="https://127.0.0.1:${PORT}"
+
+## Check if something is already on the port
+if lsof -Pi :${PORT} -sTCP:LISTEN -t >/dev/null ; then
+  echo -e "${YELLOW}[i]${RESET} Something is already using port: ${PORT}/tcp"
+  lsof -Pi :${PORT} -sTCP:LISTEN
+  echo ""
+  ps -f $(lsof -Pi :${PORT} -sTCP:LISTEN -t)
+  echo ""
+fi
+
+## Display information to user
+echo -e "${GREEN}[*]${RESET} Please wait for the OpenVAS services to start."
+echo -e "${GREEN}[*]${RESET}"
+echo -e "${GREEN}[*]${RESET} You might need to refresh your browser once it opens."
+echo -e "${GREEN}[*]${RESET}"
+echo -e "${GREEN}[*]${RESET}  Web UI (Greenbone Security Assistant): ${URL}\n"
+
+## Start services
+systemctl start greenbone-security-assistant openvas-scanner openvas-manager
+sleep 5s
+
+## Check services status
+systemctl --no-pager -l status greenbone-security-assistant openvas-scanner openvas-manager
+
+## Countdown
+echo -ne "\n${GREEN}[*]${RESET} Opening Web UI (${URL}) in: "
+for x in {5..1}; do
+  echo -n "$x... "
+  sleep 1s
+done
+echo ""
+
+## Open browser
+xdg-open "${URL}" 2>/dev/null >/dev/null &
+

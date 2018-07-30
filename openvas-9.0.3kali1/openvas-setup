@@ -1,0 +1,46 @@
+#!/bin/bash
+
+## Colour for bash prompt
+RED="\033[01;31m"
+GREEN="\033[01;32m"
+RESET="\033[00m"
+
+## Check if running as root
+if [[ $EUID -ne 0 ]]; then
+   echo -e "${RED}[-]${RESET} Error: $0 must be ${RED}run as root${RESET}" 1>&2
+   exit 1
+fi
+
+## Update feeds
+echo
+openvas-feed-update
+
+## Stop services
+echo
+openvas-stop
+
+## Handle openvassd
+echo -e "\n${GREEN}[>]${RESET} Starting openvassd"
+openvassd
+echo -e "${GREEN}[>]${RESET} Migrating openvassd"
+openvasmd --migrate
+echo -e "${GREEN}[>]${RESET} Rebuilding openvassd"
+openvasmd --rebuild
+echo -e "${GREEN}[>]${RESET} Stopping openvassd"
+killall openvassd
+sleep 15s
+
+## Start services
+echo
+openvas-start
+
+## Check for admin user
+echo -e "\n${GREEN}[>]${RESET} Checking for admin user"
+if ! openvasmd --get-users | grep -q ^admin$ ; then
+  echo -e "${GREEN}[*]${RESET} Creating admin user"
+  openvasmd --create-user=admin
+fi
+
+## Done
+echo -e "\n${GREEN}[+]${RESET} Done"
+

@@ -1,0 +1,37 @@
+From: =?utf-8?b?IlNaIExpbiAo5p6X5LiK5pm6KSI=?= <szlin@debian.org>
+Date: Fri, 4 May 2018 15:40:33 +0800
+Subject: Fix PATH_MAX undeclared issue on hurd-i386 platform
+
+---
+ misc/plugutils.c     | 3 +++
+ nasl/nasl_cmd_exec.c | 3 +++
+ 2 files changed, 6 insertions(+)
+
+diff --git a/misc/plugutils.c b/misc/plugutils.c
+index 4600c03..7525ec4 100644
+--- a/misc/plugutils.c
++++ b/misc/plugutils.c
+@@ -31,6 +31,9 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/param.h>
++#ifndef MAXPATHLEN
++#define MAXPATHLEN 4096
++#endif
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <errno.h>
+diff --git a/nasl/nasl_cmd_exec.c b/nasl/nasl_cmd_exec.c
+index 12a5669..7d36173 100644
+--- a/nasl/nasl_cmd_exec.c
++++ b/nasl/nasl_cmd_exec.c
+@@ -30,6 +30,9 @@
+ #include <sys/wait.h>           /* for waitpid */
+ #include <sys/stat.h>           /* for stat */
+ #include <sys/param.h>          /* for MAXPATHLEN */
++#ifndef MAXPATHLEN
++#define MAXPATHLEN 4096
++#endif
+ #include <unistd.h>             /* for getcwd */
+ 
+ #include "../misc/plugutils.h"          /* for find_in_path */

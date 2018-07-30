@@ -1,0 +1,11 @@
+# see git-dpm(1) from git-dpm package
+95bc5c89446f90897e4ef877321124d5e69448be
+95bc5c89446f90897e4ef877321124d5e69448be
+95bc5c89446f90897e4ef877321124d5e69448be
+95bc5c89446f90897e4ef877321124d5e69448be
+openvas-cli_1.4.5.orig.tar.gz
+b04ffd400ddef6021190c61fe32f3f1783c63c5f
+113958
+debianTag="debian/%e%v"
+patchedTag="patched/%e%v"
+upstreamTag="upstream/%e%u"

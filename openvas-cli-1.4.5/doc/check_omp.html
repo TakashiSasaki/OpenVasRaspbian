@@ -1,0 +1,265 @@
+<body text="#000000" link="#0000ff" bgcolor="#ffffff"><center><table width="80%">
+<tr><td><h1>check_omp</h1>
+<h2>OMP command line tool to support Nagios core for OpenVAS</h2>
+
+
+  <h2>Synopsis</h2>
+<b>
+    check_omp OPTIONS<br>
+
+  </b>
+
+
+  <h2>Description</h2>
+
+    <p>
+      check_omp is a OMP command line tool specifically designed to
+      support Nagios core in order to integrate vulnerability scan
+      results into system monitoring.
+    </p>
+
+    <p>
+    Basically, check_omp works the same like the &quot;omp&quot; command line tool.
+    </p>
+
+  
+
+
+  <h2>Options</h2>
+
+    
+      <p><b>-H, --host=<em>HOST</em></b></p>
+      <p>Connect to OpenVAS Manager on host HOST.</p>
+    
+
+    
+      <p><b>-p, --port=<em>PORT</em></b></p>
+      <p>Connect to OpenVAS Manager on port PORT.</p>
+    
+
+    
+      <p><b>-u, --username=<em>USER</em></b></p>
+      
+        <p>Use the username USER to access the OpenVAS Manager.</p>
+      
+    
+
+    
+      <p><b>-w, --password=<em>PASSWORD</em></b></p>
+      
+        <p>
+          Use the password PASSWORD to access the OpenVAS Manager. If
+          the password is not set as parameter, it will be requested
+          interactively.
+        </p>
+      
+    
+
+    
+      <p><b>-O, --ping</b></p>
+      
+        <p>Ping the manager.</p>
+      
+    
+
+    
+      <p><b>-t, --timout=SECONDS</b></p>
+      
+        <p>Wait SECONDS for response (0 disables timeout).</p>
+      
+    
+
+    
+      <p><b>-n, --name=<em>NAME</em></b></p>
+      
+        <p>Use NAME as the name for the newly created task.</p>
+      
+    
+
+    
+      <p><b>-T, --task=<em>TASK</em></b></p>
+      
+        <p>Report status of task TASK.</p>
+      
+    
+
+    
+      <p><b>-F, --host-filter=<em>IP</em></b></p>
+      
+        <p>Report last report status of host IP.</p>
+      
+    
+
+    
+      <p><b>--overrides=<em>N</em></b></p>
+      
+        <p>Include overrides (N: 0=no, 1=yes).</p>
+      
+    
+
+    
+      <p><b>-d, --details</b></p>
+      
+        <p>Include connection details in output.</p>
+      
+    
+
+    
+      <p><b>-l, --report-link</b></p>
+      
+        <p>Include URL of report in output.</p>
+      
+    
+
+    
+      <p><b>--dfn</b></p>
+      
+        <p>Include DFN-CERT IDs on vulnerabilities in output.</p>
+      
+    
+
+    
+      <p><b>--oid</b></p>
+      
+        <p>Include OIDs of NVTs finding vulnerabilities in output.</p>
+      
+    
+
+    
+      <p><b>--descr</b></p>
+      
+        <p>Include descriptions of NVTs finding vulnerabilities in output.</p>
+      
+    
+
+    
+      <p><b>--showlog</b></p>
+      
+        <p>Include log messages in output.</p>
+      
+    
+
+    
+      <p><b>--scanend</b></p>
+      
+        <p>Include timestamp of scan end in output.</p>
+      
+    
+
+    
+      <p><b>--autofp=<em>N</em></b></p>
+      
+        <p>Trust vendor security updates for automatic false positive filtering (0=No, 1=full match, 2=partial).</p>
+      
+    
+
+    
+      <p><b>-e, --empty-as-unknown</b></p>
+      
+        <p>Respond with UNKNOWN on empty results.</p>
+      
+    
+
+    
+      <p><b>--status</b></p>
+      
+        <p>Report status of task.</p>
+      
+    
+
+    
+      <p><b>-A, --use-asset-management</b></p>
+      
+        <p>Request host status via Asset Management.</p>
+      
+    
+
+    
+      <p><b>--trend</b></p>
+      
+        <p>Report status by trend (default).</p>
+      
+    
+
+    
+      <p><b>--last-report</b></p>
+      
+        <p>Report status by last report.</p>
+      
+    
+
+    
+      <p><b>-V, --version</b></p>
+      
+        <p>Print version.</p>
+      
+    
+
+    
+      <p><b>-v, --verbose</b></p>
+      
+        <p>Verbose messages (WARNING: may reveal passwords).</p>
+      
+    
+
+    
+      <p><b>--Werror</b></p>
+      
+        <p>Turn status UNKNOWN into status CRITICIAL.</p>
+      
+    
+
+    
+      <p><b>-?, --help</b></p>
+      
+        <p>Show help.</p>
+      
+    
+  
+
+  <h2>EXAMPLES</h2>
+
+    <p>omp --username foobar --trend</p>
+    <p>
+      Connect to the OpenVAS Manager as user foobar and ask for trend.
+    </p>
+  
+
+
+  <h2>SEE ALSO</h2>
+
+    <p>
+      <b>openvassd (8)</b>
+      <b>gsad (8)</b>
+      <b>openvasmd (8)</b>
+      <b>omp (8)</b>
+    </p>
+  
+
+
+  <h2>MORE INFORMATION ABOUT THE OpenVAS PROJECT</h2>
+
+    <p>
+      The canonical places where you will find more information
+      about the OpenVAS project are:
+
+      <a href = "http://www.openvas.org/">http://www.openvas.org/</a>
+      (Official site)
+
+      <a href = "http://wald.intevation.org/projects/openvas/">http://wald.intevation.org/projects/openvas/</a>
+      (Development Platform)
+    </p>
+  
+
+
+  <h2>COPYRIGHT</h2>
+
+    <p>
+      The check_omp command line client is released under the GNU GPL,
+      version 2, or, at your option, any later version.
+    </p>
+  
+
+
+</td></tr></table></center>
+</body>

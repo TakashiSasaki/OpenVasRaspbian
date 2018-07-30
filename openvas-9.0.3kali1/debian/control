@@ -1,0 +1,26 @@
+Source: openvas
+Section: net
+Priority: optional
+Maintainer: Kali Developers <devel@kali.org>
+Uploaders: Mati Aharoni <muts@kali.org>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.1.5
+Homepage: http://www.openvas.org/
+Vcs-Git: git://git.kali.org/packages/openvas.git
+Vcs-Browser: http://git.kali.org/gitweb/?p=packages/openvas.git;a=summary
+
+Package: openvas
+Architecture: all
+Depends: ${misc:Depends},
+         openvas-manager (>= 7.0.2-4),
+         openvas-scanner (>= 5.1.1-4),
+         greenbone-security-assistant (>= 7.0.0),
+         openvas-cli (>= 1.4.5),
+Recommends: sqlite3, xsltproc, rsync
+Description: remote network security auditor - dummy package
+ The Open Vulnerability Assessment System is a modular security auditing tool,
+ used for testing remote systems for vulnerabilities that should be fixed.
+ .
+ It is made up of several parts: a manager i.e. the main server openvasmd.
+ A scanner openvassd that execute vulnerability checking scripts. A cli and
+ a web interface called Greenbone Security Assistant gsad.
