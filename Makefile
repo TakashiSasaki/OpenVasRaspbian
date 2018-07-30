@@ -1,6 +1,6 @@
 prepare:
 	sudo apt-get update
-	apt-get source openvas libopenvas-dev openvas-scanner greenbone-security-assistant openvas-cli
+	apt-get source openvas libopenvas-dev openvas-scanner greenbone-security-assistant openvas-cli debhelper
 	sudo apt-get install build-essential
 	sudo apt-get install lsb-base doc-base gnutls-bin debhelper cmake
 	sudo apt-get install libsqlite3-dev pkg-config xmltoman 
