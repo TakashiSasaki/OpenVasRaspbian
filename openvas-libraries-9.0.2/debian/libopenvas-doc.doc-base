@@ -1,9 +1,0 @@
-Document: openvas-libraries
-Title: OpenVAS Libraries Documentation (Doxygen)
-Abstract: The doxygen generated documentation for programming with the openvas
- libraries.
-Section: Programming/C
-
-Format: HTML
-Index: /usr/share/doc/libopenvas-dev/html/index.html
-Files: /usr/share/doc/libopenvas-dev/html/*

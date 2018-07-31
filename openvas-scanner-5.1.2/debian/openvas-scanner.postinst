@@ -1,9 +1,0 @@
-#!/bin/sh
-
-set -e
-
-if [ -e /etc/redis/redis-openvas.conf ]; then
-    chown redis:redis /etc/redis/redis-openvas.conf
-fi
-
-#DEBHELPER#

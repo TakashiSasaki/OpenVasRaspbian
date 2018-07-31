@@ -1,2 +1,0 @@
-debian/openvassd.conf etc/openvas/
-debian/redis-openvas.conf etc/redis/

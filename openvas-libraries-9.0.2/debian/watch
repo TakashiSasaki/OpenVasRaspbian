@@ -1,6 +1,0 @@
-version=3
-# don't consider the beta versions
-#opts=uversionmangle=s/[-+](beta|alpha|rc)/~\1/ \
-opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%openvas-libraries-$1.tar.gz%" \
- https://github.com/greenbone/gvm-libs/tags \
- (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate

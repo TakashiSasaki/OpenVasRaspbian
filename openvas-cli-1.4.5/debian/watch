@@ -1,4 +1,0 @@
-version=4
-# don't consider beta versions
- http://wald.intevation.org/frs/?group_id=29 \
- .*/openvas-cli-(\d[\d.]*)\.tar\.gz$

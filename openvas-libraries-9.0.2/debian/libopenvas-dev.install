@@ -1,3 +1,0 @@
-usr/include/*
-usr/lib/*/libopenvas*.so
-usr/lib/*/pkgconfig/libopenvas_*.pc
