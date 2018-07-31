@@ -10,8 +10,13 @@ prepare:
 	sudo apt-get install redis-server rsync nmap snmp pnscan ike-scan
 	sudo apt-get install libgpgme-dev libhiredis-dev libksba-dev libldap2-dev libpcap-dev libssh-dev
 	sudo apt-get install uuid-dev libsnmp-dev libradcli-dev 
+	sudo apt-get install libjemalloc-dev tcl
 
-install:
+installRedis:
+	sudo dpkg -i redis-server_4.0.10-2_armhf.deb \
+		redis-tools_4.0.10-2_armhf.deb
+
+install: installRedis
 	sudo dpkg -i greenbone-security-assistant-common_7.0.3+dfsg.1-1_all.deb\
 		greenbone-security-assistant_7.0.3+dfsg.1-1_armhf.deb\
 		libopenvas-doc_9.0.2-1_all.deb\
