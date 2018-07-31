@@ -2,6 +2,7 @@
 *.deb
 *.debian.tar.gz
 *.orig.tar.gz
+*.debian.tar.xz
 greenbone-security-assistant_7.0.3+dfsg.1-1.debian.tar.xz
 greenbone-security-assistant_7.0.3+dfsg.1.orig.tar.gz
 openvas-cli_1.4.5-2.debian.tar.xz
