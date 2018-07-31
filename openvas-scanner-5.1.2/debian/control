@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
 Uploaders: ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
            SZ Lin (林上智) <szlin@debian.org>
-Build-Depends: debhelper (>= 11),
+Build-Depends: debhelper (>= 10),
                cmake (>= 2.8),
                pkg-config,
                libglib2.0-dev (>= 2.32),

@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: Kali Developers <devel@kali.org>
 Uploaders: Mati Aharoni <muts@kali.org>
-Build-Depends: debhelper (>= 11)
+Build-Depends: debhelper (>= 10)
 Standards-Version: 4.1.5
 Homepage: http://www.openvas.org/
 Vcs-Git: git://git.kali.org/packages/openvas.git
