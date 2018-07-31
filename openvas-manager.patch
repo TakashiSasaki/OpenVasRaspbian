@@ -1,0 +1,19 @@
+*** ../OpenVasRebuild-2/openvas-manager-7.0.3/debian/control	2018-07-06 21:57:27.000000000 +0900
+--- ../OpenVasRebuild-1/openvas-manager-7.0.3/debian/control	2018-07-31 09:37:26.638771088 +0900
+***************
+*** 4,10 ****
+  Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+  Uploaders: ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
+             SZ Lin (林上智) <szlin@debian.org>
+! Build-Depends: debhelper (>= 11),
+                 cmake (>= 2.8),
+                 doxygen,
+                 libopenvas-dev (>= 9.0.2),
+--- 4,10 ----
+  Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+  Uploaders: ChangZhuo Chen (陳昌倬) <czchen@debian.org>,
+             SZ Lin (林上智) <szlin@debian.org>
+! Build-Depends: debhelper (>= 10),
+                 cmake (>= 2.8),
+                 doxygen,
+                 libopenvas-dev (>= 9.0.2),
