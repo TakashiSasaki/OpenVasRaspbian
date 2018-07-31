@@ -1,7 +1,8 @@
 prepare:
 	sudo apt-get update
 	apt-get source openvas libopenvas-dev openvas-scanner greenbone-security-assistant openvas-cli debhelper dh-autoreconf
-	sudo apt-get install build-essential po4a pkg-perl-autopkgtest dwz
+	sudo apt-get install build-essential po4a pkg-perl-autopkgtest dwz 
+	sudo apt-get install dh-autoreconf dh-strip-nondeterminism po-debconf bison 
 	sudo apt-get install lsb-base doc-base gnutls-bin debhelper cmake
 	sudo apt-get install libsqlite3-dev pkg-config xmltoman 
 	sudo apt-get install libmicrohttpd-dev libxslt1-dev xsltproc libxml2-dev
