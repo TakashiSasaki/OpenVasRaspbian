@@ -1,0 +1,19 @@
+*** ../OpenVasRebuild-2/openvas-9.0.3kali1/debian/control	2018-07-18 18:07:50.000000000 +0900
+--- ../OpenVasRebuild-1/openvas-9.0.3kali1/debian/control	2018-07-31 09:36:12.478854341 +0900
+***************
+*** 3,9 ****
+  Priority: optional
+  Maintainer: Kali Developers <devel@kali.org>
+  Uploaders: Mati Aharoni <muts@kali.org>
+! Build-Depends: debhelper (>= 11)
+  Standards-Version: 4.1.5
+  Homepage: http://www.openvas.org/
+  Vcs-Git: git://git.kali.org/packages/openvas.git
+--- 3,9 ----
+  Priority: optional
+  Maintainer: Kali Developers <devel@kali.org>
+  Uploaders: Mati Aharoni <muts@kali.org>
+! Build-Depends: debhelper (>= 10)
+  Standards-Version: 4.1.5
+  Homepage: http://www.openvas.org/
+  Vcs-Git: git://git.kali.org/packages/openvas.git

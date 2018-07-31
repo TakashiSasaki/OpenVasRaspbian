@@ -1,16 +1,68 @@
+getSource:
+	apt-get source openvas libopenvas-dev openvas-scanner greenbone-security-assistant openvas-cli redis
+
+buildpackage: patch
+#	(cd openvas-cli-1.4.5; dpkg-buildpackage -us -uc)
+	#(cd openvas-libraries-9.0.2; dpkg-buildpackage -us -uc)
+	#(cd openvas-scanner-5.1.2; dpkg-buildpackage -us -uc)
+	#(cd greenbone-security-assistant-7.0.3+dfsg.1; dpkg-buildpackage -us -uc)
+	#(cd openvas-9.0.3kali1; dpkg-buildpackage -us -uc)
+	(cd redis-4.0.10; dpkg-buildpackage -us -uc)
+
+patch:
+	-patch -p2 -N -s <openvas-cli.patch
+	-patch -p2 -N -s <openvas-libraries.patch
+	-patch -p2 -N -s <openvas-scanner.patch
+	-patch -p2 -N -s <greenbone-security-assistant.patch
+	-patch -p2 -N -s <openvas.patch
+	-patch -p2 -N -s <redis.patch
+
 prepare:
 	sudo apt-get update
-	apt-get source openvas libopenvas-dev openvas-scanner greenbone-security-assistant openvas-cli redis
-	sudo apt-get install build-essential po4a pkg-perl-autopkgtest dwz 
-	sudo apt-get install dh-autoreconf dh-strip-nondeterminism po-debconf bison 
-	sudo apt-get install lsb-base doc-base gnutls-bin debhelper cmake
-	sudo apt-get install libsqlite3-dev pkg-config xmltoman 
-	sudo apt-get install libmicrohttpd-dev libxslt1-dev xsltproc libxml2-dev
-	sudo apt-get install libglib2.0-dev libgcrypt20-dev libgnutls28-dev libpcap-dev doxygen openssl 
-	sudo apt-get install redis-server rsync nmap snmp pnscan ike-scan
-	sudo apt-get install libgpgme-dev libhiredis-dev libksba-dev libldap2-dev libpcap-dev libssh-dev
-	sudo apt-get install uuid-dev libsnmp-dev libradcli-dev 
-	sudo apt-get install libjemalloc-dev tcl
+	sudo apt-get install build-essential \
+		po4a \
+		pkg-perl-autopkgtest \
+		dwz \
+		dh-autoreconf \
+		dh-strip-nondeterminism \
+		po-debconf \
+		bison \
+		lsb-base \
+		doc-base \
+		gnutls-bin \
+		debhelper \
+		cmake \
+		libsqlite3-dev \
+		pkg-config \
+		xmltoman \
+		libmicrohttpd-dev \
+		libxslt1-dev \
+		xsltproc \
+		libxml2-dev \
+		libglib2.0-dev \
+		libgcrypt20-dev \
+		libgnutls28-dev \
+		libpcap-dev \
+		doxygen \
+		openssl \
+		rsync \
+		nmap \
+		snmp \
+		pnscan \
+		ike-scan \
+		libgpgme-dev \
+		libhiredis-dev \
+		libksba-dev \
+		libldap2-dev \
+		libpcap-dev \
+		libssh-dev \
+		uuid-dev \
+		libsnmp-dev \
+		libradcli-dev \
+		libjemalloc-dev \
+		tcl \
+		ruby \
+
 
 installRedis:
 	sudo dpkg -i redis-server_4.0.10-2_armhf.deb \

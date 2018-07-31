@@ -3,6 +3,8 @@
 *.debian.tar.gz
 *.orig.tar.gz
 *.debian.tar.xz
+*.dsc
+
 greenbone-security-assistant_7.0.3+dfsg.1-1.debian.tar.xz
 greenbone-security-assistant_7.0.3+dfsg.1.orig.tar.gz
 openvas-cli_1.4.5-2.debian.tar.xz
@@ -448,3 +450,9 @@ redis-4.0.10/debian/redis.substvars
 redis-4.0.10/debian/redis/
 redis_4.0.10-2_armhf.buildinfo
 redis_4.0.10-2_armhf.changes
+greenbone-security-assistant-7.0.3+dfsg.1/
+openvas-9.0.3kali1/
+openvas-libraries-9.0.2/
+openvas-scanner-5.1.2/
+redis-4.0.10/
+openvas-cli-1.4.5/

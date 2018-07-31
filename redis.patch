@@ -1,0 +1,19 @@
+*** ../OpenVasRebuild-2/redis-4.0.10/debian/control	2018-07-06 05:14:45.000000000 +0900
+--- ../OpenVasRebuild-1/redis-4.0.10/debian/control	2018-07-31 12:43:20.704089851 +0900
+***************
+*** 3,9 ****
+  Priority: optional
+  Maintainer: Chris Lamb <lamby@debian.org>
+  Build-Depends:
+!  debhelper (>= 11~),
+   dpkg-dev (>= 1.17.14),
+   libjemalloc-dev [linux-any],
+   procps <!nocheck>,
+--- 3,9 ----
+  Priority: optional
+  Maintainer: Chris Lamb <lamby@debian.org>
+  Build-Depends:
+!  debhelper (>= 10),
+   dpkg-dev (>= 1.17.14),
+   libjemalloc-dev [linux-any],
+   procps <!nocheck>,
