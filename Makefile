@@ -71,8 +71,8 @@ pkg-all+=$(pkg-greenbone-security-assistant-common)
 pkg-all+=$(pkg-greenbone-security-assistant-dbgsym)
 pkg-all+=$(pkg-greenbone-security-assistant)
 pkg-all+=$(pkg-libopenvas9-dbgsym)
-pkg-all+=$(pkg-libopenvas9-dev)
-pkg-all+=$(pkg-libopenvas9-doc)
+pkg-all+=$(pkg-libopenvas-dev)
+pkg-all+=$(pkg-libopenvas-doc)
 pkg-all+=$(pkg-libopenvas9)
 pkg-all+=$(pkg-openvas-cli-dbgsym)
 pkg-all+=$(pkg-openvas-cli)
@@ -194,20 +194,24 @@ prerequisites-packages+=xmltoman
 prerequisites-packages+=xsltproc
 
 install-prerequisites-packages:
+	sudo apt --fix-broken install
 	sudo dpkg --configure -a
 	sudo apt-get update
 	sudo apt-get install $(prerequisites-packages) 
 
 uninstall-prerequisites-packages:
+	sudo apt --fix-broken install
 	sudo dpkg --configure -a
 	sudo apt remove $(prerequisites-packages)
 	sudo apt autoremove
 
 uninstall:
+	sudo apt --fix-broken install
 	sudo dpkg --configure -a
-	sudo dpkg --purge $(pkg-all)
+	sudo dpkg --purge $(pkg-all) 
 
 install: 
+	sudo apt --fix-broken install
 	sudo dpkg --configure -a
 	sudo dpkg -i \
 		$(deb-greenbone-security-assistant) \
