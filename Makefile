@@ -114,11 +114,13 @@ source-packages+=openvas-scanner
 source-packages+=redis
 
 help:
-	@cat /etc/
+	@echo make prepare
 	@echo make build
 	@echo make install
 
-build: install-prerequisites-packages $(deb-libopenvas9-dev)
+prepare: install-prerequisites-packages apt-get-source
+
+build: $(deb-libopenvas9-dev)
 	sudo dpkg -i $<
 	(cd $(dir-greenbone-security-assistant); dpkg-buildpackage -us -uc)
 	(cd $(dir-openvas-cli); dpkg-buildpackage -us -uc)
@@ -137,7 +139,7 @@ apt-get-source:
 	sudo cp -i kali.list /etc/apt/sources.list.d/
 	apt-get source $(source-packages)
 
-$(deb-libopenvas9-dev): apt-get-source patch
+$(deb-libopenvas9-dev): patch
 	(cd $(dir-openvas-libraries); dpkg-buildpackage -us -uc)
 
 patch:
