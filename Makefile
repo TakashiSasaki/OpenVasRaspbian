@@ -114,6 +114,7 @@ source-packages+=openvas-scanner
 source-packages+=redis
 
 help:
+	@cat /etc/
 	@echo make build
 	@echo make install
 
@@ -133,6 +134,7 @@ delete-dir-all:
 	rm -rf $(dir-all)
 
 apt-get-source:
+	sudo cp -i kali.list /etc/apt/sources.list.d/
 	apt-get source $(source-packages)
 
 $(deb-libopenvas9-dev): apt-get-source patch
