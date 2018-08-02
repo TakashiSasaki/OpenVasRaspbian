@@ -1,3 +1,6 @@
+BASEURL=http://http.kali.org/kali/pool/main/o/openvas/
+DOWNLOAD=download
+
 deb-greenbone-security-assistant-common=greenbone-security-assistant-common_7.0.3+dfsg.1-1_all.deb
 deb-greenbone-security-assistant-dbgsym=greenbone-security-assistant-dbgsym_7.0.3+dfsg.1-1_armhf.deb
 deb-greenbone-security-assistant=greenbone-security-assistant_7.0.3+dfsg.1-1_armhf.deb
@@ -14,7 +17,8 @@ deb-openvas-nasl-dbgsym=openvas-nasl-dbgsym_9.0.2-1_armhf.deb
 deb-openvas-nasl=openvas-nasl_9.0.2-1_armhf.deb
 deb-openvas-scanner-dbgsym=openvas-scanner-dbgsym_5.1.2-1_armhf.deb
 deb-openvas-scanner=openvas-scanner_5.1.2-1_armhf.deb
-deb-openvas=openvas_9.0.3kali1_all.deb
+deb-openvas-kali1=openvas_9.0.3kali1_all.deb
+deb-openvas=openvas_9.0.3_all.deb
 deb-redis-sentinel=redis-sentinel_4.0.10-2_armhf.deb
 deb-redis-server=redis-server_4.0.10-2_armhf.deb
 deb-redis-tools-dbgsym=redis-tools-dbgsym_4.0.10-2_armhf.deb
@@ -214,6 +218,7 @@ install:
 	sudo apt --fix-broken install
 	sudo dpkg --configure -a
 	sudo dpkg -i \
+		$(DOWNLOAD)/$(deb-openvas)
 		$(deb-greenbone-security-assistant) \
 		$(deb-greenbone-security-assistant-common) \
 		$(deb-libopenvas9) \
@@ -222,10 +227,15 @@ install:
 		$(deb-openvas-manager-common) \
 		$(deb-redis-server) \
 		$(deb-redis-tools) \
-		$(deb-openvas-scanner)
+		$(deb-openvas-scanner) \
+		$(deb-openvas-cli) \
 
-BASEURL=http://http.kali.org/kali/pool/main/o/openvas/
-DOWNLOAD=download
+$(deb-openvas):
+	wget -nc -nd -nH $(BASEURL)/$(deb-openvas)
+
+$(deb-openvas-kali1):
+	wget -nc -nd -nH $(BASEURL)/$(deb-openvas-kali1)
+
 download-arch-independent:
 	-mkdir $(DOWNLOAD)
 	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3.dsc)
@@ -242,4 +252,8 @@ download-arch-independent:
 
 delete-download-all:
 	-rm -rf $(DOWNLOAD)
+
+post-install:
+	sudo greenbone-nvt-sync
+	sudo openvas-check-setup
 
