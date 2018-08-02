@@ -129,7 +129,7 @@ build: $(deb-libopenvas9-dev)
 	(cd $(dir-redis); dpkg-buildpackage -us -uc)
 	#(cd $(dir-openvas); dpkg-buildpackage -us -uc)
 
-clean: delete-dir-all
+clean: delete-dir-all delete-download-all
 	git clean -xdf
 
 delete-dir-all:
@@ -223,3 +223,23 @@ install:
 		$(deb-redis-server) \
 		$(deb-redis-tools) \
 		$(deb-openvas-scanner)
+
+BASEURL=http://http.kali.org/kali/pool/main/o/openvas/
+DOWNLOAD=download
+download-arch-independent:
+	-mkdir $(DOWNLOAD)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3.dsc)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3.tar.xz)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3_all.deb)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1.dsc)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1.tar.xz)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1_all.changes)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1_all.deb)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1_amd64.buildinfo)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1_source.buildinfo)
+	(cd $(DOWNLOAD); wget -nc -nd -nH $(BASEURL)/openvas_9.0.3kali1_source.changes)
+
+
+delete-download-all:
+	-rm -rf $(DOWNLOAD)
+
