@@ -279,3 +279,9 @@ create-user:
 	sudo openvasmd --create-user=$(OPENVAS_ADMIN_USER) --role=Admin \
 		&& sudo openvasmd --user=$(OPENVAS_ADMIN_USER) --new-password=$(OPENVAS_ADMIN_USER_PASSWORD)
 
+DEB_RASPI=deb-raspi
+copy-debs:
+	-mkdir deb-raspi
+	cp $(DOWNLOAD)/*.deb $(DEB_RASPI)/
+	cp *.deb $(DEB_RASPI)/
+
