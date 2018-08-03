@@ -253,7 +253,29 @@ download-arch-independent:
 delete-download-all:
 	-rm -rf $(DOWNLOAD)
 
-post-install:
+postrequisites-packages+=sqlite3
+postsuggested-packages+=nsis
+postsuggested-packages+=nmap
+postsuggested-packages+=texlive-latex-base
+postsuggested-packages+=rpm
+postsuggested-packages+=alien
+
+check-setup:
+	sudo apt install $(postrequisites-packages) $(postsuggested-packages)
 	sudo greenbone-nvt-sync
+	sudo greenbone-scapdata-sync --verbose
+	sudo greenbone-certdata-sync
+	sudo openvas-setup
+	sudo openvas-start
 	sudo openvas-check-setup
+	echo If it is OK, Greenbone Security Assistant would be waiting for you at http://localhost:9392/ .
+
+OPENVAS_ADMIN_USER=admin
+OPENVAS_ADMIN_USER_PASSWORD=adminpw
+
+create-user:
+	@echo !!!!!! YOU SHOULD CHANGE THE PASSWORD !!!!! 
+	@echo OPENVAS_ADMIN_USER = $(OPENVAS_ADMIN_USER)
+	sudo openvasmd --create-user=$(OPENVAS_ADMIN_USER) --role=Admin \
+		&& sudo openvasmd --user=$(OPENVAS_ADMIN_USER) --new-password=$(OPENVAS_ADMIN_USER_PASSWORD)
 
