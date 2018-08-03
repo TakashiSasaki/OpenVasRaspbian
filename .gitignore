@@ -1,5 +1,6 @@
 *.swp
-*.deb
+/*.deb
+/download
 *.debian.tar.gz
 *.orig.tar.gz
 *.debian.tar.xz
